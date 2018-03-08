@@ -183,6 +183,11 @@ def run_test_digits_in_cube():
     print('actual:',sum)
 
 def digits_in_cube(n):
+
+    answer = n ** 3
+    dog = sum_of_digits(answer)
+    return dog
+
     """
     What comes in:  A positive integer.
     What goes out:  The sum of the digits in the CUBE of the integer.
@@ -216,6 +221,32 @@ def run_test_digits_in_power():
     print('--------------------------------------------------')
     print('Testing the   digits_in_power   function:')
     print('--------------------------------------------------')
+
+    n = 5
+    k = 3
+    expected_power = 125
+    expected_sum = 8
+    actual_power = n ** k
+    actual_sum = sum_of_digits(actual_power)
+    print()
+    print(n, 'to the', k, 'power should equal', expected_power, 'and add up to', expected_sum)
+    print(n, 'to the', k, 'power actually equals', n ** k)
+    print('the numbers in', actual_power, 'add up to', actual_sum)
+    print(actual_power)
+    print(actual_sum)
+
+    n = 3
+    k = 4
+    expected_power = 81
+    expected_sum = 9
+    actual_power = n**k
+    actual_sum = sum_of_digits(actual_power)
+    print()
+    print(expected_power)
+    print(actual_power)
+    print(expected_sum)
+    print(actual_sum)
+
 
 
 def digits_in_power(n, k):
