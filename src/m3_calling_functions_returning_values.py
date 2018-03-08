@@ -247,10 +247,10 @@ def run_test_digits_in_power():
     print(expected_sum)
     print(actual_sum)
 
-    n = 2
-    k = 4
-    expected_power = 16
-    expected_sum = 7
+    n = 12
+    k = 3
+    expected_power = 1728
+    expected_sum = 18
     actual_power = n ** k
     actual_sum = sum_of_digits(actual_power)
     print()
@@ -273,7 +273,7 @@ def digits_in_power(n, k):
       since 12 to the 3rd power is 1728 (whose digits sum to 18).
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #
     ####################################################################
     # IMPORTANT: CALL, as many times as needed,
