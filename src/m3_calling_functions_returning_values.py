@@ -309,14 +309,14 @@ def run_test_fancy_sums_of_digits():
     x = n**1000
     y = n**999
     number = x**y
-    expected_number = 1
+    expected_number = 1.01
     print('expected number is:', expected_number)
     print('actual number is:', number)
 
-    n = 1.0001
+    n = 1.1
     x = n**1000
     y = n**999
-    expected_number = 1
+    expected_number = 2
     number = x**y
     print('expected number is:', expected_number)
     print('actual number is:', number)
@@ -331,6 +331,13 @@ def run_test_fancy_sums_of_digits():
 
 
 def fancy_sums_of_digits(n):
+
+
+    x = n ** 1000
+    y = n ** 999
+    return x**y
+
+
     """
     What comes in:  A positive integer n.
     What goes out:
@@ -355,7 +362,7 @@ def fancy_sums_of_digits(n):
             -- so this function returns 124309.
     """
     # ------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # DONE: 8. Implement and test this function.
     #
     ####################################################################
     # IMPORTANT: CALL, as many times as needed,
