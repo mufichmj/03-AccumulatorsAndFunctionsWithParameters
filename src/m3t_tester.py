@@ -63,7 +63,7 @@ def run_test_digits_in_power():
     print('Testing the   digits_in_power   function:')
     print('--------------------------------------------------')
     testCases = TestCaseCollection()
-    testCases.addTestCase([12, 3], 18, "", [12, 3])
+    testCases.addTestCase([12,3], 18, "", [12,3])
     testCases.addTestCase([255, 3], 36, "", [255, 3])
     testCases.addTestCase([2, 10], 7, "", [2, 10])
     testCases.addTestCase([1, 10000], 1, "", [1, 10000])

@@ -4,9 +4,10 @@ in its simplest classic forms:
    SUMMING:       total = total + number
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mariah Mufich.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -29,6 +30,15 @@ def run_test_sum_cosines():
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
 
+    n = math.pi
+    cosine = math.cos(n)
+    expected_value = -1
+    sum = sum_cosines(cosine)
+    print()
+    print('cosine of pi is:', expected_value)
+    print('adding all the numbers in -1 should add to 1')
+    print('cosine of', n, 'is', cosine)
+    print('the sum of the numbers in', cosine, 'is', sum)
 
 def sum_cosines(n):
     """
