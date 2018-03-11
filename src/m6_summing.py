@@ -18,7 +18,7 @@ def main():
 def run_test_sum_cosines():
     """ Tests the   sum_cosines   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function.
+    # DONE 2. Implement this function.
     #   It TESTS the  sum_cosines  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -30,15 +30,35 @@ def run_test_sum_cosines():
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
 
+    #TEST - DRIVEN DEVELOPMENT
+
     n = math.pi
     cosine = math.cos(n)
-    expected_value = -1
-    sum = sum_cosines(cosine)
+    summary = sum_of_digits(cosine)
     print()
-    print('cosine of pi is:', expected_value)
+    print('the cosine of pi should be -1')
     print('adding all the numbers in -1 should add to 1')
-    print('cosine of', n, 'is', cosine)
-    print('the sum of the numbers in', cosine, 'is', sum)
+    print('the cosine of', n, 'is', cosine)
+    print('the sum of the numbers in', cosine, 'is', summary)
+
+    n = math.e
+    cosine = math.cos(n)
+    summary = sum_of_digits(cosine)
+    print()
+    print('the cosine of pi should be -.9')
+    print('adding all the numbers in -.9 should add to .9')
+    print('the cosine of', n, 'is', cosine)
+    print('the sum of the numbers in', cosine, 'is', summary)
+
+    n = 1.5707
+    cosine = math.cos(n)
+    summary = sum_of_digits(cosine)
+    print()
+    print('the cosine of pi/2 degrees should be 0')
+    print('adding all the numbers in 0 should add to 0')
+    print('the cosine of', n, 'is', cosine)
+    print('the sum of the numbers in', cosine, 'is', summary)
+
 
 def sum_cosines(n):
     """
@@ -51,7 +71,7 @@ def sum_cosines(n):
         cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -63,7 +83,7 @@ def sum_cosines(n):
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this function.
+    # DONE: 4. Implement this function.
     #   It TESTS the  sum_square_roots  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -74,9 +94,22 @@ def run_test_sum_square_roots():
     print('--------------------------------------------------')
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
+    sum_square_roots(5)
+
+    sum_square_roots(3)
+
+    sum_square_roots(8)
 
 
 def sum_square_roots(n):
+
+    answer = 0
+    for k in range(n):
+        answer += math.sqrt(2 * (k+1))
+        #answer = answer + math.sqrt(2*n)
+    print(answer)
+
+
     """
     What comes in:  A non-negative integer n.
     What goes out:  The sum of the square roots of the integers
@@ -90,7 +123,7 @@ def sum_square_roots(n):
       which is about 11.854408.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -102,4 +135,28 @@ def sum_square_roots(n):
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
+
+def sum_of_digits(number):
+
+    if number < 0:
+
+        number = -number
+
+
+
+    digit_sum = 0
+
+    while True:
+
+        if number == 0:
+
+            break
+
+        digit_sum = digit_sum + (number % 10)
+
+        number = number // 10
+
+
+
+    return digit_sum
 main()
