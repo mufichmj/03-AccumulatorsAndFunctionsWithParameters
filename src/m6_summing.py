@@ -32,35 +32,26 @@ def run_test_sum_cosines():
 
     #TEST - DRIVEN DEVELOPMENT
 
-    n = math.pi
-    cosine = math.cos(n)
-    summary = sum_of_digits(cosine)
-    print()
-    print('the cosine of pi should be -1')
-    print('adding all the numbers in -1 should add to 1')
-    print('the cosine of', n, 'is', cosine)
-    print('the sum of the numbers in', cosine, 'is', summary)
+    #Test 1
+    expected = .13416
+    answer = sum_cosines(3)
+    print('Test 1 expected:', expected)
+    print('Actual:', answer)
 
-    n = math.e
-    cosine = math.cos(n)
-    summary = sum_of_digits(cosine)
-    print()
-    print('the cosine of pi should be -.9')
-    print('adding all the numbers in -.9 should add to .9')
-    print('the cosine of', n, 'is', cosine)
-    print('the sum of the numbers in', cosine, 'is', summary)
+    # Test 2
+    expected = -0.2345818
+    answer = sum_cosines(5)
+    print('Test 1 expected:', expected)
+    print('Actual:', answer)
 
-    n = 1.5707
-    cosine = math.cos(n)
-    summary = sum_of_digits(cosine)
-    print()
-    print('the cosine of pi/2 degrees should be 0')
-    print('adding all the numbers in 0 should add to 0')
-    print('the cosine of', n, 'is', cosine)
-    print('the sum of the numbers in', cosine, 'is', summary)
-
+    # Test 3
+    expected = .421623
+    answer = sum_cosines(9)
+    print('Test 1 expected:', expected)
+    print('Actual:', answer)
 
 def sum_cosines(n):
+
     """
     What comes in:  A non-negative integer n.
     What goes out:  The sum of the cosines of the integers
@@ -78,7 +69,11 @@ def sum_cosines(n):
     #   No fair running the code of  sum_cosines  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
+    sum = 0
+    for k in range(n + 1):
+        sum = sum + math.cos(k)
 
+    return sum
 
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
@@ -94,22 +89,27 @@ def run_test_sum_square_roots():
     print('--------------------------------------------------')
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
-    sum_square_roots(5)
 
-    sum_square_roots(3)
+    # Test 1
+    expected = 11.8544
+    answer = sum_square_roots(5)
+    print('Test 1 expected:', expected)
+    print('Actual:', answer)
 
-    sum_square_roots(8)
+    # Test 2
+    expected = 19.06016
+    answer = sum_square_roots(7)
+    print('Test 1 expected:', expected)
+    print('Actual:', answer)
+
+    # Test 3
+    expected = 31.7749
+    answer = sum_square_roots(10)
+    print('Test 1 expected:', expected)
+    print('Actual:', answer)
 
 
 def sum_square_roots(n):
-
-    answer = 0
-    for k in range(n):
-        answer += math.sqrt(2 * (k+1))
-        #answer = answer + math.sqrt(2*n)
-    print(answer)
-
-
     """
     What comes in:  A non-negative integer n.
     What goes out:  The sum of the square roots of the integers
@@ -130,33 +130,17 @@ def sum_square_roots(n):
     #   No fair running the code of  sum_square_roots  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
+    sum = 0
+    for k in range(n + 1):
+        sum = sum + math.sqrt(2*k)
+
+    return sum
 
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
 
-def sum_of_digits(number):
-
-    if number < 0:
-
-        number = -number
 
 
-
-    digit_sum = 0
-
-    while True:
-
-        if number == 0:
-
-            break
-
-        digit_sum = digit_sum + (number % 10)
-
-        number = number // 10
-
-
-
-    return digit_sum
 main()
